@@ -24,10 +24,15 @@ The dataset used in this project shows diet, physical activity, and nutrition da
 5. Create a test_main.py script which ensures that the CRUD operations from the query script run successfully.
 
 The screnshots below demonstrate the use of the command line for querying the Behaviors table:
-   ![Sample Stats](https://github.com/user-attachments/assets/54a6c401-c230-46b9-948d-0e2929d952f4)
-   * test_generate_data_viz(csv): calls generate_data_viz() using the student performance factors csv file in order to produce the below scatterplot.
-     
-     ![Visualization](performance.png)
+
+<img width="1244" alt="Screenshot 2024-10-06 at 4 39 45 PM" src="https://github.com/user-attachments/assets/28999545-0c27-4411-b324-c5d9d5bc06b0">
+
+<img width="1245" alt="Screenshot 2024-10-06 at 4 40 14 PM" src="https://github.com/user-attachments/assets/85c2fc8d-4d4f-4f32-b5ce-e6cd556c0888">
+
+<img width="1242" alt="Screenshot 2024-10-06 at 4 40 50 PM" src="https://github.com/user-attachments/assets/53bf04ae-e779-4192-89a8-039e1621ada7">
+
+<img width="1245" alt="Screenshot 2024-10-06 at 4 43 07 PM" src="https://github.com/user-attachments/assets/b4fda2e1-00cc-4a33-8379-7ec371b06d6a">
+
 
 
 

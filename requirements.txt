@@ -9,4 +9,4 @@ ruff==0.0.284
 #cli tool
 fire==0.7.0
 #ds
-pandas==2.2.2
+pandas

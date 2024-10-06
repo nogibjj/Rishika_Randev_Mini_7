@@ -1,9 +1,10 @@
 """
-Extract a dataset from a URL like Kaggle or data.gov. JSON or CSV formats tend to work well
-
-food dataset
+Extract a dataset from a data.gov URL 
+regarding health behaviors (nutrition, physical activity, and diet)
+across the U.S.
 """
 import requests
+import pandas as pd
 
 def extract(url="https://data.cdc.gov/api/views/hn4x-zwk7/rows.csv?accessType=DOWNLOAD", 
             file_path="data/Behaviors.csv"):
@@ -11,6 +12,12 @@ def extract(url="https://data.cdc.gov/api/views/hn4x-zwk7/rows.csv?accessType=DO
     with requests.get(url) as r:
         with open(file_path, 'wb') as f:
             f.write(r.content)
+    df = pd.read_csv(file_path)
+    df_subset = df.iloc[:10, ]\
+    [['YearStart', 'YearEnd',	'LocationAbbr', \
+    'LocationDesc', 'Question', 'Data_Value']]
+    df_subset.to_csv(file_path, index=False)
+    print("Successfully extracted data")   
     return file_path
 
 

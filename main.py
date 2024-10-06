@@ -4,16 +4,30 @@ ETL-Query script
 
 from mylib.extract import extract
 from mylib.transform_load import load
-from mylib.query import query
+from mylib.query import create_row, read_rows, update_row, delete_row
+import fire
 
-# Extract
-print("Extracting data...")
-extract()
 
-# Transform and load
-print("Transforming data...")
-load()
+def etl():
+    extract()
+    load()
 
-# Query
-print("Querying data...")
-query()
+
+def create(year_start, year_end, location, location_desc, question, data):
+    create_row(year_start, year_end, location, location_desc, question, data)
+
+
+def read(rows):
+    read_rows(rows)
+
+
+def update(id, year_start, year_end, location, location_desc, question, data):
+    update_row(id, year_start, year_end, location, location_desc, question, data)
+
+
+def delete(id):
+    delete_row(id)
+
+
+if __name__ == "__main__":
+    fire.Fire()

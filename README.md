@@ -1,9 +1,4 @@
-## SQLite Lab
-
-![4 17-etl-sqlite-RAW](https://github.com/nogibjj/sqlite-lab/assets/58792/b39b21b4-ccb4-4cc4-b262-7db34492c16d)
-
-[![CI](https://github.com/nogibjj/Rishika_Randev_MiniProject_1/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_1/actions/workflows/hello.yml)
-
+[![CI](https://github.com/nogibjj/Rishika_Randev_Mini_5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_Mini_5/actions/workflows/cicd.yml)
 # Rishika Randev's Python & SQLite Script for IDS706 Week 5
 
 ## ☑️ Requirements (Mini Project 5):

@@ -10,3 +10,6 @@ ruff==0.0.284
 fire==0.7.0
 #ds
 pandas
+#databricks
+python-dotenv
+databricks-sql-connector

@@ -1,33 +1,37 @@
 """
-Transforms and Loads data into the local SQLite3 database
+Transforms and Loads data into a Databricks database
 """
 
-import sqlite3
 import csv
 import os
+from databricks import sql
+from dotenv import load_dotenv
 
 
-# load the csv file and insert into a new sqlite3 database
-def load(dataset="data/Behaviors.csv"):
-    """ "Transforms and Loads data into the local SQLite3 database"""
+# load the csv file and insert into Databricks db
+def load(dataset="data/MH.csv"):
+    """ "Transforms and Loads data into Databricks"""
 
     # prints the full working directory and path
     print(f"Locating dataset at: {os.getcwd()}/{dataset}")
     payload = csv.reader(open(dataset, newline=""), delimiter=",")
     next(payload)
-    conn = sqlite3.connect("Behavior.db")
-    c = conn.cursor()
-    c.execute("DROP TABLE IF EXISTS Behaviors")
-    c.execute("CREATE TABLE Behaviors \
-    (id INTEGER PRIMARY KEY AUTOINCREMENT, YearStart INTEGER, YearEnd INTEGER, \
-    LocationAbbr TEXT, LocationDesc TEXT, Question TEXT, Data_Value INTEGER)")
+    load_dotenv()
+    access_token = os.getenv("databricks")
+    server_host = os.getenv("server_host")
+    http_path = os.getenv("http_path")
+    with sql.connect(server_hostname=server_host,
+                     http_path=http_path,
+                     access_token=access_token) as conn:
+        c = conn.cursor()
+        c.execute("DROP TABLE IF EXISTS rr368_MentalHealth")
+        c.execute("CREATE TABLE IF NOT EXISTS rr368_MentalHealth \
+        (Indicator string, Group string, State string, Time_Period_Start_Date string, Time_Period_End_Date string, Value float, High_CI float)") 
     # insert
-    c.executemany(
-        "INSERT INTO Behaviors (YearStart, YearEnd, LocationAbbr, \
-        LocationDesc, Question, Data_Value) VALUES (?, ?, ?, ?, ?, ?)",
-        payload,
-    )
-    conn.commit()
-    conn.close()
-    print("Successfully transformed and loaded data to SQLite")
-    return "Behavior.db"
+        c.executemany(
+        "INSERT INTO rr368_MentalHealth (Indicator, Group, State, \
+        Time_Period_Start_Date, Time_Period_End_Date, Value, High_CI) VALUES (?, ?, ?, ?, ?, try_cast(? as float), try_cast(? as float))", 
+        payload,)
+        c.close()
+    print("Successfully transformed and loaded data to Databricks")
+    return "Success"

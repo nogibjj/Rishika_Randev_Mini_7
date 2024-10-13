@@ -29,7 +29,8 @@ def load(dataset="data/MH.csv"):
         if not result:
             #c.execute("DROP TABLE IF EXISTS rr368_MentalHealth")
             c.execute("CREATE TABLE IF NOT EXISTS rr368_MentalHealth \
-            (Indicator string, Group string, State string, Time_Period_Start_Date string, \
+            (Indicator string, Group string, State string, \
+            Time_Period_Start_Date string, \
             Time_Period_End_Date string, Value float, High_CI float)") 
         # insert
             c.executemany(

@@ -26,9 +26,9 @@ def test_transform_load():
                      access_token=access_token) as conn:
             c = conn.cursor()
             c.execute("SELECT * FROM rr368_MentalHealth LIMIT 4")
-        result = c.fetchall()
-        assert result is not None
-        c.close()
+            result = c.fetchall()
+            assert result is not None
+            c.close()
         conn.close()
 
 

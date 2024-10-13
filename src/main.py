@@ -2,9 +2,9 @@
 ETL-Query script
 """
 
-from src.mylib.extract import extract
-from src.mylib.transform_load import load
-from src.mylib.query import query
+from mylib.extract import extract
+from mylib.transform_load import load
+from mylib.query import query
 import fire
 
 
@@ -23,7 +23,8 @@ def complex_query(input=None):
         RANK() OVER(PARTITION BY t2.Indicator ORDER BY t2.Value DESC) Value_Rank \
         FROM default.rr368_mentalhealth AS t2 \
         JOIN t1 \
-        ON (t1.Indicator = t2.Indicator)"
+        ON (t1.Indicator = t2.Indicator) \
+        LIMIT 3"
     query(input)
 
 

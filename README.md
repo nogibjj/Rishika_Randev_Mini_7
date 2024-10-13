@@ -1,4 +1,4 @@
-[![CI](https://github.com/nogibjj/Rishika_Randev_Mini_5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_Mini_5/actions/workflows/cicd.yml)
+[![CI](https://github.com/nogibjj/Rishika_Randev_Mini_6/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_Mini_6/actions/workflows/cicd.yml)
 # Rishika Randev's Python Script for IDS706 Week 6
 
 ## ☑️ Requirements (Mini Project 6):
@@ -52,7 +52,7 @@ FROM
 LIMIT
   1000
 ```
-The above query uses self joins, aggregations & grouping, as well as ordering within a window function. Specifically, it first creates a CTE which shows the max frequency value for each indicator type in the dataset. It then joins this output with select columns from the original datset, and also an additional column which shows the ranking for each row within its indicator group, with respect to the frequency value. The purpose is simply to show each row of the original dataset, along with the max value of the indicator group that that row belongs to, and also the rank of that row within its indiciator group.
+The above query uses self joins, aggregations & grouping, as well as ordering within a window function. Specifically, it first creates a CTE which shows the max frequency value for each indicator type in the dataset. It then joins this output with select columns from the original datset, and also an additional column which shows the ranking for each row within its indicator group, with respect to the frequency value. The purpose is simply to show each row of the original dataset, along with the max value of the indicator group that that row belongs to, and also the rank of that row within its indiciator group. Interestingly, the results of this query showed that Mississippi was the state with the highest frequency of both depressive and anxiety disorder symptoms from that time period, based on this survey.
 
 Databricks execution:
 

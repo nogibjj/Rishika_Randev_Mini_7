@@ -6,6 +6,7 @@ import os
 
 
 def query(query_input):
+    load_dotenv()
     access_token = os.getenv("databricks")
     server_host = os.getenv("server_host")
     http_path = os.getenv("http_path")

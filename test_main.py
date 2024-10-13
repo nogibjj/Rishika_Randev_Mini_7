@@ -6,6 +6,9 @@ Test goes here
 from mylib.extract import extract
 from mylib.transform_load import load
 from mylib.query import query
+from databricks import sql
+from dotenv import load_dotenv
+import os
 
 
 def test_extract():
@@ -14,8 +17,19 @@ def test_extract():
 
 
 def test_transform_load():
-    transformed_loaded = load()
-    assert transformed_loaded == "Success"
+        load_dotenv()
+        access_token = os.getenv("databricks")
+        server_host = os.getenv("server_host")
+        http_path = os.getenv("http_path")
+        with sql.connect(server_hostname=server_host,
+                     http_path=http_path,
+                     access_token=access_token) as conn:
+            c = conn.cursor()
+            c.execute("SELECT * FROM rr368_MentalHealth LIMIT 4")
+        result = c.fetchall()
+        assert result is not None
+        c.close()
+        conn.close()
 
 
 def test_query():

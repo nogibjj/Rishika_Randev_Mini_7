@@ -18,6 +18,7 @@ def query(query_input):
         print("Query Output: \n")
         print(c.fetchall())
         c.close()
+        conn.close()
     return "Success"
 
      

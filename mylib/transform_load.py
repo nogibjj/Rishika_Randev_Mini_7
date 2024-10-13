@@ -39,5 +39,6 @@ def load(dataset="data/MH.csv"):
             VALUES (?, ?, ?, ?, ?, try_cast(? as float), try_cast(? as float))", 
             payload,)
         c.close()
+        conn.close()
     print("Successfully transformed and loaded data to Databricks")
     return "Success"

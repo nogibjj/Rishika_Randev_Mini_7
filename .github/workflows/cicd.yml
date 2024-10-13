@@ -23,6 +23,10 @@ jobs:
       - name: lint
         run: make lint
       - name: test
+        env:
+          databricks: ${{ secrets.databricks}}
+          server_host: ${{ secrets.server_host}}
+          http_path: ${{ secrets.http_path}}
         run: make test
       - name: format
         run: make format

@@ -4,7 +4,7 @@ Test goes here
 """
 
 from mylib.extract import extract
-from mylib.transform_load import load
+#from mylib.transform_load import load
 from mylib.query import query
 from databricks import sql
 from dotenv import load_dotenv

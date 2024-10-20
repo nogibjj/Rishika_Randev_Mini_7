@@ -1,9 +1,10 @@
 [![CI](https://github.com/nogibjj/Rishika_Randev_Mini_6/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_Mini_6/actions/workflows/cicd.yml)
-# Rishika Randev's Python Script for IDS706 Week 6
+# Rishika Randev's Python Script for IDS706 Week 7
 
-## ☑️ Requirements (Mini Project 6):
-1. Design a complex SQL query involving joins, aggregation, and sorting
-2. Provide an explanation for what the query is doing and the expected results
+## ☑️ Requirements (Mini Project 7):
+1. Package a Python script with setuptools or a similar tool
+2. Include a user guide on how to install and use the tool
+3. Include communication with an external or internal database (NoSQL, SQL, etc)
 
 ## ☑️ The Dataset
 The dataset used in this project shows the frequency of depression and anxiety symptoms for various different groups across the US over the course of 7 days (05/07 - 05/14) in 2020. It was collected by the U.S. Census Bureau as part of the Household Pulse Survey to capture the impact of COVID on Americans, and is freely available through data.gov at this link: https://catalog.data.gov/dataset/indicators-of-anxiety-or-depression-based-on-reported-frequency-of-symptoms-during-last-7-.

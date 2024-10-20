@@ -20,6 +20,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: install packages
         run: make install
+      - name: set up package
+        run: make setup_package
       - name: lint
         run: make lint
       - name: test

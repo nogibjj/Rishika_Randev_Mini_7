@@ -20,3 +20,6 @@ container-lint:
 refactor: format lint
 
 all: install lint test format 
+
+setup_package:
+	python setup.py develop --user

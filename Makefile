@@ -22,5 +22,5 @@ refactor: format lint
 all: install lint test format 
 
 setup_package:
-	pip install --user -e .
-	#python setup.py develop --user
+	#pip install --user -e .
+	python setup.py develop --user

@@ -12,7 +12,7 @@ setup(
         "databricks-sql-connector",
         "pandas",
         "python-dotenv",
-        "fire"
+        "fire",
     ],
     entry_points={
         "console_scripts": [

@@ -23,10 +23,11 @@ all: install lint test format
 
 setup_package:
 	#pip install --user -e .
-	python setup.py develop --user
+	python setup.py develop 
 
 etl:
-	etl_query etl
+	etl extract
+	etl transform_load
 
 query:
-	etl_query complex_query
+	etl query "SELECT Indicator, MAX(Value) Max_Value_Across_States FROM default.rr368_mentalhealth GROUP BY Indicator"

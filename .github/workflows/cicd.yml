@@ -22,9 +22,7 @@ jobs:
         run: make install
       - name: set up package
         run: make setup_package
-      - name: extract 
-        run: make extract 
-      - name: transform_load
+      - name: etl 
         run: make etl
       - name: query
         run: make query
@@ -38,5 +36,3 @@ jobs:
           server_host: ${{ secrets.SERVER_HOST}}
           http_path: ${{ secrets.HTTP_PATH}}
         run: make test
-      - name: format
-        run: make format

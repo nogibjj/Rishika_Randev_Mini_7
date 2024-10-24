@@ -15,7 +15,7 @@ The dataset used in this project shows the frequency of depression and anxiety s
 3. Create a main.py script which allows for the query function to be called from the command line using Python argparse. 
 4. Create a test_main.py script which ensures that the ETL operations and querying the Databricks database run successfully.
 5. Create a setup.py file to use setuptools to create a package for your Python functionality.
-6. Set up the Python package and run the ETL and querying functionalities from the CLI using this user guide.
+6. Set up the Python package and run the ETL and querying functionalities from the CLI using this [user guide](https://github.com/nogibjj/Rishika_Randev_Mini_7/blob/da0c6b8830cab6581616011d7ec3befd41e416e3/User%20Guide.md).
 
 ## ☑️ Example Query That Can Be Run Against This Data
 

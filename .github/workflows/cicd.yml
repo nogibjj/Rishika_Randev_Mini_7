@@ -23,8 +23,16 @@ jobs:
       - name: set up package
         run: make setup_package
       - name: etl 
+        env:
+          databricks: ${{ secrets.DATABRICKS}}
+          server_host: ${{ secrets.SERVER_HOST}}
+          http_path: ${{ secrets.HTTP_PATH}}        
         run: make etl
       - name: query
+        env:
+          databricks: ${{ secrets.DATABRICKS}}
+          server_host: ${{ secrets.SERVER_HOST}}
+          http_path: ${{ secrets.HTTP_PATH}}      
         run: make query
       - name: Format
         run: make format

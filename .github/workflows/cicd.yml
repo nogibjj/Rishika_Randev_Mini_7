@@ -22,6 +22,14 @@ jobs:
         run: make install
       - name: set up package
         run: make setup_package
+      - name: extract 
+        run: make extract 
+      - name: transform_load
+        run: make etl
+      - name: query
+        run: make query
+      - name: Format
+        run: make format
       - name: lint
         run: make lint
       - name: test

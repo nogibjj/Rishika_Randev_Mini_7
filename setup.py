@@ -16,7 +16,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "etl_query=main:main",
+            "etl_query=main:fire.Fire()",
         ],
     },
 )

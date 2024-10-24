@@ -24,3 +24,9 @@ all: install lint test format
 setup_package:
 	#pip install --user -e .
 	python setup.py develop --user
+
+etl:
+	etl_query etl
+
+query:
+	etl_query complex_query
